@@ -17,6 +17,8 @@ connectDB();
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 // ── Security ──
 app.use(helmet());
 app.use(cors({
@@ -69,5 +71,3 @@ app.listen(PORT, () => {
 });
 
 export default app;
-
-// Forced nodemon restart to load new .env variables (GitHub)
